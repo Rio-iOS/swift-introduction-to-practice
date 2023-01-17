@@ -151,4 +151,316 @@ print(b4.value)
 
 /*
  構造体：値型のデータ構造
+ 構造体：値型の一種であり、ストアドプロパティの組み合わせによって1つの値を表す
+    - 標準ライブラリで提供されている多くの型は構造体
+    - 構造体ではないのは、列挙型であるOptional<Wrapped>型、型の組み合わせであるタプル型、プロトコルであるAny型のみ
+ 
+ [定義]
+ struct 構造体名 {
+    // 構造体の定義
+ }
  */
+
+// 構造体の定義
+struct Article {
+    let id: Int
+    let title: String
+    let body: String
+    
+    init(id: Int, title: String, body: String) {
+        self.id = id
+        self.title = title
+        self.body = body
+    }
+    
+    func printBody() {
+        print(body)
+    }
+}
+
+let article = Article(id: 1, title: "title", body: "body")
+article.printBody()
+
+/*
+ ストアドプロパティの変更による値の変更
+ 構造体は、ストアドプロパティの組み合わせで1つの値を表す値型である。
+ 構造体のストアドプロパティを変更することは、構造体を別の値に変更することであり、
+ 構造体が入っている変数や定数への再代入を必要とする。
+ 
+ 値型の値の変更に関する仕様は、構造体のストアドプロパティの変更にも適用される
+ 
+ 
+ 定数のストアドプロパティは変更できない
+ 構造体のストアドプロパティの変更は再代入を必要とするため、定数に代入された構造体のストアどプロパティは変更できない
+ */
+
+struct SomeStruct {
+    var id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+}
+
+var variable = SomeStruct(id: 1)
+variable.id = 2
+print(variable.id)
+
+let constant = SomeStruct(id: 1)
+// bad: constant.id = 2
+
+
+/*
+ メソッド内のストアドプロパティの変更にはmutatingキーワードが必要
+ */
+
+struct SomeStruct2 {
+    var id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    mutating func someMethod() {
+        id = 4
+    }
+}
+
+var a5 = SomeStruct2(id: 1)
+a5.someMethod()
+print(a5.id)
+
+/*
+ // mutatingキーワードがないとコンパイルエラー
+ struct SomeStruct2 {
+     var id: Int
+     
+     init(id: Int) {
+         self.id = id
+     }
+     
+     func someMethod() {
+         id = 4
+     }
+ }
+ */
+
+/*
+ メンバーワイズイニシャライザ：デフォルトで用意されているイニシャライザ
+ 
+ 型のインスタンスは初期化後に全てのプロパティが初期化されている必要がある
+ 独自にイニシャライザを定義して初期化の処理を行うこともできるが、構造体では自動的に定義される
+ メンバーワイズイニシャライザ（memberwise initializer）というイニシャライザが利用できる
+ 
+ メンバーワイズイニシャライザ：型が持っている各ストアドプロパティと同名の引数をとるイニシャライザ
+ */
+
+// メンバーワイズイニシャライザ
+struct Article2 {
+    var id: Int
+    var title: String
+    var body: String
+}
+
+let article2 = Article2(id: 1, title: "Hello", body: "...")
+print(article2.id)
+print(article2.title)
+print(article2.body)
+
+/*
+ メンバーワイズイニシャライザのデフォルト引数
+ ストアドプロパティが初期化式とともに定義されている場合、そのプロパティに対応するメンバーワイズイニシャライザの引数はデフォルト引数を持ち、呼び出し時の引数を省略できる
+ */
+
+struct Mail {
+    var subject: String = "(No Subject)"
+    var body: String
+}
+
+let noSubject = Mail(body: "Hello!")
+print(noSubject.subject)
+print(noSubject.body)
+
+let greeting = Mail(subject: "Greeting", body: "Hello")
+print(greeting.subject)
+print(greeting.body)
+
+
+/*
+ クラス：参照型のデータ構造
+ 
+ 構造体との大きな違い
+    - 一つは参照型であること
+    - 継承が可能であること
+ 
+ [定義]
+ class クラス名 {
+    // クラスの定義
+ }
+ */
+
+class SomeClass {
+    let id: Int
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
+    
+    func printName() {
+        print(name)
+    }
+}
+
+let instance = SomeClass(id: 1, name: "name")
+instance.printName()
+
+/*
+ 継承：型の構成要素の引き継ぎ
+ 継承：新たなクラスを定義するときに、他のクラスのプロパティ、メソッド、イニシャライザなどの型を再利用する仕組み
+ 継承先のクラスでは、継承元のクラスと共通する動作をあらためて定義する必要がなく、継承元のクラスとの差分のみを定義すれば済む
+ 
+ サブクラス：継承先のクラス
+ スーパークラス：継承元のクラス
+ 
+ Swiftでは、複数のクラスから継承する多重継承は禁止されている
+ 
+ [定義]
+ class クラス名: スーパークラス名 {
+    // クラスの定義
+ }
+ */
+
+class User {
+    let id: Int
+    
+    var message: String {
+        return "Hello."
+    }
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    func printPforile() {
+        print("id: \(id)")
+        print("message: \(message)")
+    }
+}
+
+// Userを継承したクラス
+class RegisteredUser: User {
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.name = name
+        super.init(id: id)
+    }
+}
+
+let registeredUser = RegisteredUser(id: 1, name: "Rio Fujimon")
+let id = registeredUser.id
+let message = registeredUser.message
+registeredUser.printPforile()
+
+/*
+ オーバーライド：型の構成要素の再定義
+ オーバーライド：スーパークラスで定義されているプロパティやメソッドなどの要素は、サブクラスで再定義することもできる
+ オーバーライド可能なプロパティは、インスタンスプロパティとクラスプロパティのみで、スタティックプロパティはオーバーライドできない
+ 
+ オーバーライドを行うには、overrideキーワードを使用してスーパークラスで定義されている要素を再定義
+ 
+ [定義]
+ class クラス名: スーパークラス名 {
+    override func メソッド名(引数) -> 戻り値の型 {
+        // メソッド呼び出し時に実行される文
+    }
+ 
+    override var プロパティ名: 型名 {
+        get {
+            return文によって値を返す処理
+            superキーワードでスーパークラスの実装を利用できる
+        }
+ 
+        set {
+            値を更新する処理
+            superキーワードでスーパークラスの実装を利用できる
+        }
+    }
+ }
+ */
+
+
+class User2 {
+    let id: Int
+    
+    var message: String {
+        return "Hello."
+    }
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    func printProfile() {
+        print("id: \(id)")
+        print("message: \(message)")
+    }
+}
+
+
+class RegisteredUser2: User {
+    let name: String
+    
+    override var message: String {
+        return "Hello, my name is \(name)"
+    }
+    
+    init(id: Int, name: String) {
+        self.name = name
+        super.init(id: id)
+    }
+    
+    override func printPforile() {
+        super.printPforile()
+        print("name: \(name)")
+    }
+}
+
+let user = User2(id: 1)
+user.printProfile()
+
+print("--")
+
+let registeredUser2 = RegisteredUser2(id: 2, name: "Rio Fujimon")
+registeredUser2.printPforile()
+
+
+/*
+ finalキーワード：継承とオーバーライドの禁止
+ オーバーライド可能な要素の前にfinalキーワードを記述することで、その要素がサブクラスでオーバーライドされることを禁止できる
+ */
+
+class SuperClass {
+    func overridableMethod() {}
+    
+    final func finalMethod() {}
+}
+
+class SubClass: SuperClass {
+    override func overridableMethod() {}
+    
+    // オーバーライド不可能なためコンパイルエラー
+    // bad: override func finalMethod(){}
+}
+
+class InheritableClass {}
+
+class ValidSubClass: InheritableClass {}
+
+final class FinalClass {}
+
+// 継承不可能なためコンパイルエラー
+// class InvalidSubClass: FinalClass {}
+
