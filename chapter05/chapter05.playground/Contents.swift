@@ -613,4 +613,236 @@ print(count)
 
 /*
  パターンマッチ：値の構造や性質による評価
+ パターン：値の持つ構造や性質を表現する
+ パターンマッチ：値が特定のパターンに合致するか検査すること
+ 
+ パターンの種類
+ - 式パターン
+ - バリューバインディングパターン
+ - オプショナルパターン
+ - 列挙型ケースパターン
+ - is演算子による型キャスティングパターン
+ - as演算子による型キャスティングパターン
  */
+
+/*
+ 式パターン(expression pattern)：~=演算子による評価を行うパターン
+    - 式パターンは式のみで構成され、式 ~= 評価する値がtrueを返す場合にマッチする
+    - ~=演算子に対する評価結果は比較する型ごとに定義されており、独自に~=の評価を定義することもできる
+    - 標準ライブラリでは基本的な型に対して~=演算子が定義されている
+        - (ex)
+            - 範囲型のマッチングでは、指定した値が範囲に含まれるかどうかを判定するcontains(_:)で評価される
+            - Int型やString型などの==演算子で比較可能な型のマッチングでは==演算子で評価されるようになっている
+ */
+
+let integer = 9
+
+switch integer {
+case 6:
+    print("match: 6")
+case 5...10:
+    print("match: 5...10")
+default:
+    print("default")
+}
+
+/*
+ バリューバインディングパターン：値の代入を伴う評価
+ バリューバインディングパターン（value-binding pattern）：値を変数や定数に代入するためのパターン
+    - varまたはletキーワードと他のパターンを組み合わせて使用
+    - バリューバインディングパターンと組み合わせられる代表的なパターンは、識別子パターン
+    - 識別子パターン：変数名または定数名で構成され、どのような値にもマッチし、値をその名前を持つ変数や定数に代入する
+    - バリューバインディングパターンと組み合わせた場合、定数や変数を宣言して代入を行うという動作になる
+ */
+
+// バリューバインディングパターン
+let value6 = 3
+
+switch value6 {
+case let matchedValue:
+    print(matchedValue)
+}
+
+/*
+ オプショナルパターン：Optional<Wrapped>型の値の有無を評価
+ オプショナルパターン（optional pattern）：Optional<Wrapped>型の値の有無を評価するパターン
+ 値を持つOptional<Wrapped>型にマッチする
+ */
+
+// オプショナルパターン
+let optionalA4 = Optional(4)
+
+switch optionalA {
+case let a?:
+    // 4が出力される
+    print(a)
+default:
+    print("nil")
+}
+
+/*
+ 列挙型ケースパターン：ケースとの一致の評価
+ 列挙型ケースパターン（enumeration case pattern）：列挙型のケースとの一致を評価するパターン
+ 列挙型ケースパターンは、評価式がOptional<Wrapped>型かつWrapped型が列挙型の場合、Wrapped型のケースでマッチングが行える
+ 列挙型ケースパターンは、「ケース名(パターン, パターン, ...)」という形式で他のパターンと組み合わせると、連想値のパターンマッチも可能になる
+ 連想値：列挙型のケースに紐づいた付加情報であり、同一のケースでも異なる連想値を持つことができる
+ */
+
+// 列挙型ケースパターン
+enum Hemisphere {
+    case norhern
+    case southern
+}
+
+let hemisphere = Hemisphere.norhern
+
+switch hemisphere {
+case .norhern:
+    print("match: .northern")
+case .southern:
+    print("match: .southern")
+}
+
+// 列挙型：Optional<Wrapped>, Wrappedが列挙型の場合
+enum Hemisphere2 {
+    case northern
+    case southern
+}
+
+let hemisphere2 = Optional(Hemisphere2.northern)
+// Optional<Wrapped>の場合、case nilが必要
+switch hemisphere2 {
+case .northern:
+    print("match: .northern")
+case .southern:
+    print("match: .southern")
+case nil:
+    print("nil")
+}
+
+// 列挙型ケースパターン, 連想値のパターンマッチ, バリューバインディングパターン
+enum Color {
+    case rgb(Int, Int, Int)
+    case cmyk(Int, Int, Int, Int)
+}
+
+let color = Color.rgb(100, 200, 255)
+
+switch color {
+case .rgb(let r, let g, let b):
+    print(".rgb: \(r), \(g), \(b)")
+    
+case .cmyk(let c, let m, let y, let k):
+    print(".cmyk: \(c), \(m), \(y), \(k)")
+}
+
+
+/*
+ is演算子による型キャスティングパターン：型の判定による評価
+ 型キャスティングパターン(type-casting pattern)：型のキャストによって評価を行うパターン
+ 型キャスティングパターン
+    - is演算子：is 型名
+        - is演算子による評価結果がtrueであればマッチする
+    - as演算子：パターン as 型名
+        - パターンの式がダウンキャストに成功した場合、マッチする
+ */
+
+// 型キャスティングパターン（is演算子）
+let any: Any = 1
+
+switch any {
+case is String:
+    print("match: String")
+    
+case is Int:
+    print("match: Int")
+    
+default:
+    print("default")
+}
+
+// 型キャスティングパターン（as演算子）
+let any2: Any = 1
+
+switch any2 {
+case let string as String:
+    print("match: String(\(string))")
+    
+case let int as Int:
+    print("match: Int(\(int))")
+    
+default:
+    print("default")
+}
+
+/*
+ パターンマッチが使える場所
+ switch文以外にif文、guard文、for-in文、while文でも条件にcaseキーワードを指定するとパターンマッチできる
+ また、do文のcatch節でもパターンマッチできる
+ 
+ switch文では、条件を網羅しなければならないため、多くの場合ケースを2つ以上書くことになる。
+ 一方、if文は条件を網羅する必要がないため、検証したいパターンマッチのみを書けば十分
+ 従って、条件を網羅する必要があるときはswitch文を選び、網羅する必要がないときはif文でのパターンマッチを使う
+ */
+
+/*
+ if case パターン = 制御式 {
+    制御式がパターンにマッチした場合に実行される文
+ }
+ */
+let value7 = 9
+
+if case 1...10 = value {
+    print("1以上10以下の値です")
+}
+
+/*
+ guard case パターン = 制御式 else {
+    パターンにマッチしなかった場合に実行される文
+    guard文が記述されているスコープの外に退出する必要がある
+ }
+ */
+
+func someFunction4() {
+    let value = 9
+    guard case 1...10 = value else {
+        return
+    }
+    
+    print("1以上10以下の値です")
+}
+
+/*
+ for-in文
+ 
+ for case パターン in 値の連続 {
+    要素がパターンにマッチした場合に実行される文
+ }
+ */
+
+let array4 = [1, 2, 3, 4]
+
+for case 2...3 in array4 {
+    print("2以上2以下の値です")
+}
+
+/*
+ while文
+ 
+ while case パターン = 制御式 {
+    制御式がパターンにマッチする間は繰り返し実行される文
+ }
+ */
+
+var nextValue = Optional(1)
+
+// オプショナルパターンでマッチ
+while case let value? = nextValue {
+    print("value: \(value)")
+    
+    if 3 <= value {
+        nextValue = nil
+    } else {
+        nextValue = value + 1
+    }
+}
