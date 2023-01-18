@@ -51,7 +51,7 @@ import Foundation
  mutatingキーワード：自身の値の変更を宣言するキーワード
  値型：mutatingキーワードをメソッドの宣言時に追加することで、自身の値を変更する処理を実行できる
     - mutatingキーワードが指定されたメソッドを実行してインスタンスの値を変更すると、インスタンスが格納されている変数への暗黙的な再代入が行われる
-    - mutating期キーワードが指定されたメソッドの呼び出しは再代入として扱われる為、定数に細田隠喩された値型のインスタンスに対しては実行できず、コンパイルエラーとなる
+    - mutating期キーワードが指定されたメソッドの呼び出しは再代入として扱われる為、定数に再代入された値型のインスタンスに対しては実行できず、コンパイルエラーとなる
     - 定数に対して実行できないという仕様は、インスタンスが保持する値の変更を防ぎたい場合に役立つ
  
  [定義]
@@ -99,7 +99,7 @@ var a3 = 1
 a3.increment()
 print(a3)
 
-
+// .append()は、mutatingキーワードで定義されている
 var mutableArray = [1, 2, 3]
 mutableArray.append(4) // [1, 2, 3, 4]
 
@@ -324,7 +324,7 @@ instance.printName()
  サブクラス：継承先のクラス
  スーパークラス：継承元のクラス
  
- Swiftでは、複数のクラスから継承する多重継承は禁止されている
+ Swiftでは、複数のクラスから継承する「多重継承」は禁止されている
  
  [定義]
  class クラス名: スーパークラス名 {
@@ -367,7 +367,12 @@ registeredUser.printPforile()
 /*
  オーバーライド：型の構成要素の再定義
  オーバーライド：スーパークラスで定義されているプロパティやメソッドなどの要素は、サブクラスで再定義することもできる
- オーバーライド可能なプロパティは、インスタンスプロパティとクラスプロパティのみで、スタティックプロパティはオーバーライドできない
+ オーバーライド可能なプロパティ
+    - インスタンスプロパティ
+    - クラスプロパティ
+ 
+ オーバーライド不可能なプロパティ
+    - スタティックプロパティ
  
  オーバーライドを行うには、overrideキーワードを使用してスーパークラスで定義されている要素を再定義
  
@@ -464,3 +469,448 @@ final class FinalClass {}
 // 継承不可能なためコンパイルエラー
 // class InvalidSubClass: FinalClass {}
 
+
+/*
+ クラスに紐づく要素
+ クラスのインスタンスではなく、クラス自身に紐づく要素として、「クラスプロパティ」と「クラスメソッド」がある
+ 
+ クラスプロパティはスタティックプロパティと、クラスメソッドはスタティックメソッドと、それぞれ似通った性質を持つ
+ 両者の違いは、スタティックプロパティとスタティックメソッドは、オーバーライドできないのに対し、
+ クラスプロパティとクラスメソッドはオーバーライドできる
+ */
+
+/*
+ クラスプロパティ：クラスに紐づくプロパティ
+ クラスプロパティはクラスのインスタンスではなく、クラス自身に紐づくプロパティで、
+ インスタンスに依存しない値を扱う場合に利用する
+ 
+ クラスプロパティを定義するには、プロパティ宣言の先頭に「classキーワード」を追加する
+ クラスプロパティにアクセスするには、型名に「.」とクラスプロパティ名を付けて、「型名.クラスプロパティ名」のように記述する
+ */
+
+// クラスプロパティ
+class A {
+    class var className: String {
+        return "A"
+    }
+}
+
+class B: A {
+    // クラスプロパティは、overrideできる
+    override class var className: String {
+        return "B"
+    }
+}
+
+print(A.className)
+print(B.className)
+
+/*
+ クラスメソッド：クラス自身に紐づくメソッド
+ クラスメソッドはクラスのインスタンスではなく、クラス自身に紐づくメソッドで、
+ インスタンスに依存しない処理を実装する際に利用
+ 
+ クラスメソッドを定義するには、メソッドの定義の先頭にclassキーワードを追加する
+ クラスメソッドを呼び出すには、型名に「.」とクラスメソッド名を付けて型名.クラスメソッド名のように書く
+ */
+
+// クラスメソッド
+class A2 {
+    class func inheritanceHierarchy() -> String {
+        return "A"
+    }
+}
+
+class B2: A2 {
+    override class func inheritanceHierarchy() -> String {
+        return super.inheritanceHierarchy() + "<-B"
+    }
+}
+
+class C2: B2 {
+    override class func inheritanceHierarchy() -> String {
+        return super.inheritanceHierarchy() + "<-C"
+    }
+}
+
+print(A2.inheritanceHierarchy())
+print(B2.inheritanceHierarchy())
+print(C2.inheritanceHierarchy())
+
+/*
+ スタティックプロパティ、スタティックメソッドとの使い分け
+ スタティックプロパティ、スタティックメソッドはクラスに対しても利用できる
+ つまり、クラスに対してインスタンスはなく型に紐づく要素を定義する場合、スタティックプロパティ、スタティックメソッドと、クラスプロパティ、クラスメソッドの両方を選択できる
+    -> どちらを選択するべきかは、その値がサブクラスで変更される可能性があるかどうか
+ */
+
+class A3 {
+    class var className: String {
+        return "A3"
+    }
+    
+    static var baseClassName: String {
+        return "A3"
+    }
+}
+
+class B3: A3 {
+    override class var className: String {
+        return "B3"
+    }
+    
+    // スタティックプロパティはオーバーライドできないので、コンパイルエラー
+}
+
+print(A3.className)
+print(A3.baseClassName)
+print(B3.className)
+print(B3.baseClassName)
+
+
+/*
+ イニシャライザの種類と初期化のプロセス
+ イニシャライザの役割は型のインスタンス化の完了までに全てのプロパティを初期化し、型の整合性を保つこと
+ それに加えて、クラスには継承関係があるため、さまざまな階層で定義されたプロパティが初期化されることを保証する必要がある
+ 
+ クラスには、2段階初期化という仕組みが導入されている
+    - 指定イニシャライザ
+    - コンビニエンスイニシャライザ
+ */
+
+/*
+ 指定イニシャライザ：主となるイニシャライザ
+ 指定イニシャライザ（desinated initializer）：クラスの主となるイニシャライザ
+    - このイニシャライザの中で、全てのストアドプロパティが初期化される必要がある
+ */
+
+class Mail2 {
+    let from: String
+    let to: String
+    let title: String
+   
+    // 指定イニシャライザ
+    init(from: String, to: String, title: String) {
+        self.from = from
+        self.to = to
+        self.title = title
+    }
+}
+
+/*
+ コンビニエンスイニシャライザ：指定イニシャライザをラップするイニシャライザ
+ コンビニエンスイニシャライザ（convenience initializer）：指定イニシャライザを中継するイニシャライザで、内部で引数を組み立てて指定イニシャライザを呼び出す必要がある
+ 
+ コンビニエンスイニシャライザは、「convenienceキーワード」を追加することで定義できる
+ */
+
+class Mail3 {
+    let from: String
+    let to: String
+    let title: String
+    
+    // 指定イニシャライザ
+    init(from: String, to: String, title: String) {
+        self.from = from
+        self.to = to
+        self.title = title
+    }
+    
+    // コンビニエンスイニシャライザ
+    convenience init(from: String, to: String) {
+        self.init(from: from, to: to, title: "Hello, \(from)")
+    }
+}
+
+/*
+ 2段階初期化
+ 型の整合性を保った初期化を実現するためには、クラスのイニシャライザには次の3つのルールがある
+    - 指定イニシャライザは、スーパークラスの指定イニシャライザを呼ぶ
+    - コンビニエンスイニシャライザは、同一クラスのイニシャライザを呼ぶ
+    - コンビニエンスイニシャライザは、最終的に指定イニシャライザを呼ぶ
+ 
+ このルールを満たしている場合、継承関係にある全てのクラスの指定イニシャライザが必ず実行され、
+ 各クラスで定義されたプロパティが全て初期化されることが保証される。
+ 一つでも満たせないルールがある場合、型の整合性を保てない可能性があるためコンパイルエラー
+ 
+ また、スーパークラスとサブクラスのプロパティの初期化順序を守るため、
+ 指定イニシャライザによるクラスの初期化は、次の2段階に分けて行われる
+ 
+    - クラス内で新たに定義された全てのストアドプロパティを初期化し、スーパークラスの指定イニシャライザを実行する。スーパークラスでも同様の初期化を行い、大元のクラスまでのぼる
+ 
+    - ストアドプロパティ以外の初期化を行う
+ 
+ 第1段階の時点では、スーパークラスで定義されているストアドプロパティが初期化されていないため、selfにはアクセスできないようになっている。
+ 第2段階では、全てのストアドプロパティが初期化されていることが保証されている保証されており、selfに安全にアクセスができるようになっている
+ */
+
+class User3 {
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    func printProfile() {
+        print("id: \(id)")
+    }
+}
+
+class RegisteredUser3: User3 {
+    let name: String
+
+    init(id: Int, name: String) {
+        // 第1段階
+        self.name = name
+        super.init(id: id)
+        
+        // 第2段階
+        self.printProfile()
+    }
+}
+
+let registeredUser3 = RegisteredUser3(id: 1, name: "Rio Fujimon")
+
+/*
+ デフォルトイニシャライザ：プロパティの初期化が不要な場合に定義されるイニシャライザ
+ 
+ プロパティが存在しない場合や、全てのプロパティが初期値を持っている場合、指定イニシャライザ内で
+ 初期化する必要があるプロパティはない。
+ このようなクラスでは、暗黙的にデフォルトの指定イニシャライザがinit()で定義される
+ */
+
+class User4 {
+    let id = 0
+    let name = "Rio"
+    
+    // 以下と同等のイニシャライザが自動的に定義
+    // init() {}
+}
+
+let user4 = User4()
+
+/*
+ 一つでも指定イニシャライザ内で初期化が必要なプロパティが存在する場合、
+ デフォルトイニシャライザinit()はなくなり、指定イニシャライザを定義する必要が生じる
+ */
+class User5 {
+    let id: Int
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
+}
+let user5 = User5(id: 0, name: "Rio")
+
+/*
+ 指定イニシャライザ内で初期化する必要があるプロパティが存在するにも関わらず、
+ 指定イニシャライザを定義しない場合は、インスタンス化が不可能となるためコンパイルエラー
+ 
+ class User {
+    let id: Int
+    let name: String
+    
+    // id, nameを初期化する方法が存在しないためコンパイルエラー
+ }
+ */
+
+
+/*
+ クラスのメモリ管理
+ 
+ Swiftは、クラスのメモリ管理にARC（Automatic Reference Counting）という方式を採用している
+ ARCでは、クラスのインスタンスを生成するたびに、そのインスタンスのためのメモリ領域を自動的に確保し、
+ 不要になったタイミングでそれらを自動的に解放する
+ 
+ ARCでは、使用中のインスタンスのメモリが解放されてしまうことを防ぐために、
+ プロパティ、変数、定数からそれぞれのクラスのインスタンスへの参照がいくつあるかをカウントする。
+ このカウントが0になった時に、そのインスタンスはどこからも参照されていないとみなされ、メモリが解放される
+ このカウントのことを参照カウンタと呼ぶ
+ */
+
+/*
+ デイニシャライザ：インスタンスの終了処理
+ ARCによってインスタンスが破棄されるタイミングでは、クラスのデイニシャライザが実行される
+ デイニシャライザとはイニシャライザの逆で、クリーンアップなどの終了処理を行うもの
+
+ デイニシャライザは継承関係の下位のクラスから自動的に実行されるため、スーパークラスのデイニシャライザを呼び出す必要はない
+ 
+ [定義]
+ class クラス名 {
+    deinit {
+        // クリーンアップ処理
+    }
+ }
+ */
+
+/*
+ 値の参照と参照の比較
+ 参照型の比較
+    - 参照先の値どうしの比較
+    - 参照先自体の比較
+ 
+ 参照先の値どうしの比較は、==演算子で行う
+ 参照先自体の比較は===演算子で行う
+ */
+
+class SomeClass2: Equatable {
+    static func == (lhs: SomeClass2, rhs: SomeClass2) -> Bool {
+        return true
+    }
+}
+
+let a6 = SomeClass2()
+let b6 = SomeClass2()
+let c6 = a6
+
+// 定数aとbは同じ値
+print(a6 == b6)
+
+// 定数aとbの参照先は異なる
+print(a6 === b6)
+
+// 定数aとcの参照先は同じ
+print(a6 === c6)
+
+
+/*
+ 列挙型：複数の識別子をまとめる型
+ 列挙型は値型の一種で、複数の識別子をまとめる型
+ ケース：列挙型の一つ一つの識別子
+ 
+ 標準ライブラリで提供されている一部の型は列挙型
+    - Optional<Wrapped>
+
+ イニシャライザを定義してインスタンス化を行うことができる
+ 
+ 列挙型には、プロパティやメソッドなども利用できる
+    - プロパティには制限があり、ストアドプロパティを持つことはできない
+ [定義]
+ enum 列挙型名 {
+    case ケース名1
+    case ケース名2
+    ...
+ 
+    // その他の列挙型の定義
+ }
+ */
+
+// 列挙型の定義
+enum Weekday {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+}
+
+let sunday = Weekday.sunday
+let monday = Weekday.monday
+print(sunday)
+print(monday)
+
+// イニシャライザを利用した列挙型の定義
+enum Weekday2 {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    
+    init?(japaneseName: String) {
+        switch japaneseName {
+        case "日": self = .sunday
+        case "月": self = .monday
+        case "火": self = .tuesday
+        case "水": self = .wednesday
+        case "木": self = .thursday
+        case "金": self = .friday
+        case "土": self = .saturday
+        default: return nil
+        }
+    }
+}
+
+let sunday2 = Weekday2(japaneseName: "日")
+let monday2 = Weekday2(japaneseName: "月")
+print(sunday2)
+print(monday2)
+
+// プロパティの利用
+enum Weekday3 {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    
+    var name: String {
+        switch self {
+        case .sunday: return "日"
+        case .monday: return "月"
+        case .tuesday: return "火"
+        case .wednesday: return "水"
+        case .thursday: return "木"
+        case .friday: return "金"
+        case .saturday: return "土"
+        }
+    }
+}
+
+let weekday3 = Weekday3.monday
+let name = weekday3.name
+print(name)
+
+/*
+ ローバリュー：実体の定義
+ 
+ ローバリュー（raw value）：列挙型ケースには、それぞれに対応する値を設定できる
+    - 全てのケースのローバリューの型は同じである必要がある
+    - ローバリューの型に指定できるのは、Int型、Double型、String型、Character型などのリテラルに変換可能な型
+ 
+ ローバリューが定義されている列挙型では、ローバリューと列挙型の相互関係を行うための
+ 失敗可能イニシャライザinit?(rawValue:)とプロパティrawValueが暗黙的に用意されている
+ init?(rawValue:)はローバリューと同じ型の値を引数に取り、ローバリューが一致するケースであれば、
+ そのケースをインスタンス化し、なければnilを返す。また、rawValueプロパティは、ケースのローバリューを返す
+ ローバリューと列挙型の相互変換は、文字や数値といった原始的なデータのうち、想定している値だけを
+ 各ケースに振り分けることに役立つ
+ 
+ [定義]
+ enum 列挙型名: ローバリューの型 {
+    case ケース名1 = ローバリュー1
+    case ケース名2 = ローバリュー2
+ }
+ */
+
+// ローバリューの定義
+enum Symbol: Character {
+    case sharp = "#"
+    case dollar = "$"
+    case percent = "%"
+}
+
+
+// rawValueプロパティの利用
+enum Symbol2: Character {
+    case sharp = "#"
+    case dollar = "$"
+    case percent = "%"
+}
+
+let symbol = Symbol2(rawValue: "#")
+print(symbol)
+
+let character = symbol?.rawValue
+print(character)
+
+/*
+ ローバリューのデフォルト値
+ */
