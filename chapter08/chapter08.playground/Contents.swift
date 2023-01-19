@@ -913,4 +913,129 @@ print(character)
 
 /*
  ローバリューのデフォルト値
+ 
+ Int型やString型では、ローバリューにデフォルト値が存在し、特に値を指定しない場合はデフォルト値が使用される
+    - Int型のローバリューのデフォルト値は、最初のケース0で、それ以降は前のケースの値に1を足した値である
+    - String型のローバリューのデフォルト値は、ケース名をそのまま文字列にした値
  */
+
+enum Option: Int {
+    case none
+    case one
+    case two
+    case undefined = 999
+}
+
+print(Option.none.rawValue) // 0
+print(Option.one.rawValue) // 1
+print(Option.two.rawValue) // 2
+print(Option.undefined.rawValue) // 999
+
+// String型のローバリューのデフォルト値
+enum Direction: String {
+    case north
+    case east
+    case south
+    case west
+}
+
+print(Direction.north.rawValue)
+print(Direction.east.rawValue)
+print(Direction.south.rawValue)
+print(Direction.west.rawValue)
+
+
+/*
+ 連想値：付加情報の付与
+ 列挙型のインスタンスは、どのケースかということに加えて、連想値（associated value）という付加情報を持つことができる
+ 連想値に指定できる型には制限がない
+ */
+
+enum Color2 {
+    case rgb(Float, Float, Float)
+    case cmyk(Float, Float, Float, Float)
+}
+
+let rgb = Color2.rgb(0.0, 0.33, 0.66)
+let cmyk = Color2.cmyk(0.0, 0.33, 0.66, 0.99)
+
+let color = Color2.rgb(0.0, 0.33, 0.66)
+
+switch color {
+case .rgb(let r, let g, let b):
+    print("r: \(r), g: \(g), b: \(b)")
+    
+case .cmyk(let c, let m, let y, let k):
+    print("c: \(c), m: \(m), y: \(y), k: \(k)")
+}
+
+/*
+ CaseIterableプロトコル：要素列挙のプロトコル
+ 
+ 列挙型を使用していると、全てのケースを配列として取得したい場合がある
+    - (ex)
+    - 都道府県を列挙型で表現する場合、選択肢を表示するために全てのケースの配列が必要
+ 
+ CaseIterableプロトコルへの準拠を宣言した列挙型には自動的にallCasesスタティックプロパティが追加され、
+ このプロパティが列挙型の全ての要素を返す。
+ */
+
+enum Fruit: CaseIterable {
+    case peach, apple, grape
+}
+
+print(Fruit.allCases)
+
+/*
+ コンパイラによるallCasesプロパティのコードの自動生成
+ 通常、プロトコルに準拠するためには、プロトコルが定義しているプロパティやメソッドをプログラマが実装する必要がある。
+ 
+ 連想値を持たない列挙型がCaseIterableプロトコルの準拠を宣言した場合、その実装故コードがコンパイラによって自動生成されるため
+ もちろん、コンパイラによって自動生成された実装を使わずに自分でallCasesプロパティを実装することもできる
+ 
+ CaseIterableプロトコルの他にも、Equatableプロトコル、Hashableプロトコルで行われる
+ コードの自動生成は、コンパイラが一部のプロトコルを特別扱いすることで実現されるため、特殊なものとして覚える
+ */
+
+// 以下のような実装は、自明であるため、わざわざ自分で行う必要はない
+enum Fruit2: CaseIterable {
+    case peach, apple, grape
+    
+    static var allCases: [Fruit2] {
+        return [
+            .peach,
+            .apple,
+            .grape
+        ]
+    }
+}
+
+print(Fruit2.allCases)
+
+/*
+ allCasesプロパティのコードが自動生成されない条件
+ 列挙型が連想値を持つ場合、allCasesプロパティの実装は自動生成されなくなる。
+ 従って、そのような列挙型でも全てのケースを列挙したい場合には、プログラマがallCasesプロパティを実装する必要がある
+ 
+ もし連想値にInt型やString型がある場合、取り得る値が非常に多くなるため、
+ CaseIterableプロトコルに準拠するのは現実的ではない。
+ そのようなケースでは、そもそも列挙型がCaseIterableプロトコルに準拠すること自体が妥当かどうかを見直すべき
+ */
+
+// allCasesプロパティを実装するのが現実的である
+enum Fruit3: CaseIterable {
+    case peach, apple(color: AppleColor), grape
+    
+    static var allCases: [Fruit3] {
+        return [
+            .peach,
+            .apple(color: .red),
+            .apple(color: .green),
+            .grape,
+        ]
+    }
+}
+
+enum AppleColor {
+    case green, red
+}
