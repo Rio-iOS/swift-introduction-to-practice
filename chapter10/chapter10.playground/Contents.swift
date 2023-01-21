@@ -351,3 +351,164 @@ print(result)
     // 列挙型の定義
  }
  */
+
+// 構造体
+struct GenericStruct<T> {
+    var property: T
+}
+
+// クラス
+class GenericClass<T> {
+    func someFunction(x: T){}
+}
+
+// 列挙型
+enum GenericEnum<T> {
+    case SomeCase(T)
+}
+
+/*
+ジェネリック型のインスタンス化や、ジェネリック型のスタティックメソッドの
+実行には、特殊化が必要となる。
+ジェネリック型を特殊化する方法
+    - 明治的に型引数を指定する方法
+    - 型推論によって型引数を決定する方法
+
+型引数の指定による特殊化
+ジェネリック型では、型引数の直接指定による特殊化を行える
+
+型推論による特殊化
+ジェネリック型では、明治的に型引数を指定しなくても、
+イニシャライザやスタティックメソッドの引数からの型推論によって
+特殊化を行える。
+型推論によるジェネリック型の特殊化は、ジェネリック関数での特殊化と
+同様に引数の型が型引数となる。
+*/
+
+// 型引数の指定による特殊化
+struct Container2<Content> {
+    var content: Content
+}
+
+let intContainer2 = Container2<Int>(content: 1)
+let stringContainer2 = Container2<String>(content: "abc")
+
+// 型引数とイニシャライザの引数の型が一致しないのでコンパイルエラー
+// bad: let container = Container2<Int>(content: "abc")
+
+struct Container3<Content> {
+    var content: Content
+}
+
+let intContainer3 = Container3(content: 1)
+let stringContainer3 = Container3(content: "abc")
+
+/*
+型制約：型引数に対する制約
+ジェネリック関数と同様に、ジェネリック型の型引数にも型制約を設けられる。
+しかし、使用できる型制約の種類や場所にはいくつかの違いがある。
+
+型の定義で使用できる型制約
+ジェネリック関数では、3つの種類の型制約を使用できる。
+ジェネリック型の型の定義以下の制約が使用できる。
+    - 型引数のスーパークラスや準拠するプロトコルに対する制約
+
+型引数のスーパークラスや準拠するプロトコルに対する制約を指定するには、
+型引数のあと「:」に続けて、プロトコル名やスーパークラス名を指定する。
+
+以下のwhere節を必要とする型制約はジェネリック型では、使用できない
+    - 連想型のスーパークラスや準拠するプロトコルに対する
+    - 型どうしの一致を要求する制約
+
+[定義]
+struct 型名<型引数: プロトコル名やスーパークラス名> {
+    // 構造体の定義
+}
+*/
+
+/*
+ジェネリック型の型制約付きエクステンション
+型制約付きエクステンション：ジェネリック型では、型引数が特定の条件を満たす場合にのみ有効となるエクステンションを定義できる
+
+ジェネリック型の型制約付きエクステンションを利用すると、
+型制約を満たす型が持つプロパティやメソッドを使った機能を、
+汎用的に実装することができる
+
+型制約付きエクステンションを定義するには、
+エクステンションの型名に続けてwhere節を追加する
+
+型の定義では型引数のスーパークラスや準拠するプロトコルに対する制約しか
+使用できなかったが、エクステンションではすべての種類の型制約が使用できる
+
+[定義]
+extension ジェネリック型名 where 型制約 {
+    // 制約を満たす場合に有効となるエクステンション
+}
+*/
+
+struct Pair<Element> {
+    let first: Element
+    let second: Element
+}
+
+/*
+型制約でElement型を限定することによって使用できるようになった
+プロパティやメソッドを使うのが、型制約付きエクステンションを定義する目的
+*/
+extension Pair where Element == String {
+    func hasElement(containing character: Character) -> Bool {
+        return first.contains(character) || second.contains(character)
+    }
+}
+
+let stringPair = Pair(first: "abc", second: "def")
+print(stringPair.hasElement(containing: "e"))
+
+let integerPair = Pair(first: 1, second: 2)
+// メソッドが存在しないためコンパイルエラー
+// bad: print(integerPair.hasElement(containing: "e"))
+
+/*
+プロトコルへの条件付き準拠
+ジェネリック型の型制約付きエクステンションでは、プロトコルへの準拠も可能
+これを「プロトコルへの条件付き準拠（conditional cnformance）」という。
+ジェネリック型は、型引数が型制約を満たす時のみプロトコルへ準拠する。
+
+プロトコルへの条件付き準拠を行うには、型制約付きエクステンションの
+型名に続けて「:条件付きプロトコル名」を追加することで、
+プロトコルへの準拠の宣言を追加する。
+
+[定義]
+extension ジェネリック型: 条件付き準拠するプロトコル名 where 型制約 {
+    // 制約を満たす場合に有効となるエクステンション
+}
+
+プロトコルへの条件付き準拠が役立つ典型的なケース
+    - 型引数があるプロトコルに準拠するとき、元のジェネリック型も同じプロトコルに準拠させるというケース
+
+[標準ライブラリでの活用]
+extension Array: Equatable where Element: Equatable {
+    // 省略
+}
+*/
+
+struct Pair2<Element> {
+    let first: Element
+    let second: Element
+}
+
+// Pair2<Element>型の型引数ElementがEquatableプロトコルに準拠している場合
+// Pair2<Element>型もまたEquatableプロトコルに準拠させることができる
+extension Pair2: Equatable where Element: Equatable {
+    static func == (_ lhs: Pair2, _ rhs: Pair2) -> Bool {
+        return lhs.first == rhs.first && lhs.second == rhs.second
+    }
+}
+
+let stringPair2 = Pair2(first: "abc", second: "def")
+let stringPair3 = Pair2(first: "def", second: "ghi")
+let stringPair4 = Pair2(first: "abc", second: "def")
+// Pair2<String>型どうしが==演算子で比較できていることから
+// Pair2<String>型がEquatableプロトコルに準拠できていることがわかる
+print(stringPair2 == stringPair3)
+print(stringPair2 == stringPair4)
