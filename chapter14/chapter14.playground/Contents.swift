@@ -303,6 +303,8 @@ class SomeOperation2: Operation {
 
 let queue7 = OperationQueue()
 queue7.name = "com.example.my_operation_queue"
+// タスクは最大2個まで並列に実行される
+// 1から10までの数値が2つずつ1秒おきに出力される
 queue7.maxConcurrentOperationCount = 2
 queue7.qualityOfService = .userInitiated
 
@@ -314,3 +316,184 @@ for i in 1...10 {
 
 queue7.addOperations(operations, waitUntilFinished: false)
 print("Operations are added")
+
+/*
+ タスクのキャンセル
+ 
+ Operationクラスにはタスクをキャンセルするためのしくみが備わっている
+ 
+ cancel()メソッドを呼び出すことで、タスクに対してキャンセルを伝える
+ しかし、これだけで実際にタスクの実行がキャンセルされるわけではない。
+ Operationクラスのサブクラスにキャンセル時の処理を追加する必要がある。
+ 
+ isCancelledプロパティ：タスクがキャンセルされたかどうかを判定できる
+ */
+
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+class SomeOperation3: Operation {
+    let number: Int
+    init(number: Int) {
+        self.number = number
+    }
+    
+    override func main() {
+        Thread.sleep(forTimeInterval: 1)
+        
+        guard !isCancelled else { return }
+        
+        print(number)
+    }
+}
+
+let queue8 = OperationQueue()
+queue8.name = "com.example.my_operation_queue"
+queue8.maxConcurrentOperationCount = 2
+queue8.qualityOfService = .userInitiated
+
+var operations2 = [SomeOperation3]()
+
+for i in 0..<10 {
+    operations2.append(SomeOperation3(number: i))
+}
+
+queue8.addOperations(operations2, waitUntilFinished: false)
+
+operations2[6].cancel()
+
+/*
+ タスクの依存関係の設定
+ 
+ Operationクラスは複数のタスク間での依存関係を設定するためのインタフェースを持っている
+ あるタスクに対して、それよりも先に実行されるべきタスクを指定するには、
+ OperationクラスのaddDependency(_:)メソッドで先に実行されるべきタスクを引数に渡す
+ */
+
+class SomeOperation4: Operation {
+    let number: Int
+    
+    init(number: Int) {
+        self.number = number
+    }
+    
+    override func main() {
+        Thread.sleep(forTimeInterval: 1)
+        if isCancelled { return }
+        
+        print(number)
+    }
+}
+
+let queue9 = OperationQueue()
+queue9.name = "com.example.my_operation_queue"
+queue9.maxConcurrentOperationCount = 2
+queue9.qualityOfService = .userInitiated
+
+var operations3 = [SomeOperation4]()
+
+for i in 0..<10 {
+    operations3.append(SomeOperation4(number: i))
+    
+    if i > 0 {
+        operations3[i].addDependency(operations3[i-1])
+    }
+}
+
+queue9.addOperations(operations3, waitUntilFinished: false)
+
+/*
+ Operation, OperationQueueクラスを利用するべきとき
+ 
+ 複雑な非同期処理を実装する
+ Operation、OperationQueueクラスは、非同期処理をオブジェクト指向で抽象化したもの
+ 単純なスレッドの切り替えのほかにも、タスクの依存関係の定義やキャンセルなどの機能が備わっているため、
+ 複雑な非同期処理に向いている
+ 
+ Operation、OperationQueueクラスは内部ではGCDを利用しているので、
+ 基本的にGCDで実現できることは、Operation、OperationQueueクラスでも実現できる
+ 
+ Operation、OperationQueue
+    - タスクの定義やキューの生成が必須
+    - タスクのキャンセルとタスク間の依存関係の設定に関しては、Operation、OperationQueueクラスを用いた方が容易に実装できる
+    - キャンセルや依存関係を実装する必要がある場合は、Operation、OperationQueueクラスの利用を検討する
+ 
+ GCD
+    - タスクはクロージャで表され、キューを生成しなくてもグローバルキューを利用できる
+    - 単純な非同期処理を実装する場合、GCDを利用する方がよい
+ */
+
+/*
+ Threadクラス：手動でのスレッド管理
+ GCDやOperation、OperationQueueクラスはキューを通じてタスクの管理を行い、スレッドの管理はシステムに任せる
+ 
+ Foundationでは、スレッドそのものをThreadクラスとして実装している
+    - スレッドの生成と制御をプログラマー自身で行う
+ 
+ [実装方法]
+ Threadクラスのサブクラスを実装することで、自分自身でスレッドを定義できる
+ スレッドのエントリポイントは、main()メソッドをオーバーライドして実装する
+ Threadクラスのインスタンスはstart()メソッドを呼び出す
+ 
+ 
+ カレントスレッド：処理を実行しているスレッド
+ 
+ Threadクラスにはカレントスレッドを操作するための機能が用意されている
+    - sleep(forTimeInterval:)クラスメソッド
+        - このメソッドが実行されているスレッドを、指定して秒数だけ停止させる
+    
+    - sleep(until:)クラスメソッド
+        - 時刻を表すDate型の値を引数に取り、その時刻までカレントスレッドを休止させる
+ 
+    - exit()クラスメソッド
+        - カレントスレッドの実行を途中で終了する
+    - isMainThreadクラスプロパティ
+        - カレントスレッドがメインスレッドかどうかを判定する
+ */
+
+/*
+ 利用するべきとき
+ 
+ 特になし
+ スレッドを利用する多くのケースでは、スレッドの作成、管理そのものよりも、非同期処理によって
+ パフォーマンスやユーザビリティを改善することが目的となる
+ 
+ そのような場合には、複雑かつバグを生みやすいスレッドの管理をシステムレベルで行なってくれるGCDやOperation、OperationQueueクラスを利用するべき
+ 
+ Threadクラスを利用してスレッドの管理を手動で行う必要があるケースはまれ
+ */
+
+/*
+ 非同期処理の結果のイベント通知
+ 非同期処理の開始や終了のイベントを非同期処理の呼び出し元に通知したい場合、イベント通知を用いる
+ 
+ 非同期処理の結果の最も一般的な方法は、クロージャを用いたもの
+    - runAsynchronous()関数は、結果をクロージャの引数として呼び出し元に伝える
+ */
+class SomeThread: Thread {
+    override func main() {
+        print("executed.")
+    }
+}
+
+let thread = SomeThread()
+thread.start()
+
+func runAsynchronousTask(handler: @escaping (Int) -> Void) {
+    let globalQueue = DispatchQueue.global()
+    
+    globalQueue.async {
+        // 合計を求める
+        let result = Array(0...1000000).reduce(0, +)
+        
+        let mainQueue = DispatchQueue.main
+        mainQueue.async {
+            // 結果をクロージャの引数として呼び出し元に伝える
+            handler(result)
+        }
+    }
+}
+
+runAsynchronousTask { result in
+    print(result)
+}
