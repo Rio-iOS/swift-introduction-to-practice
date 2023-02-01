@@ -1,0 +1,23 @@
+{
+  "": {
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/master.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/ExampleJSON.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/RepositoryTests.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/UserTests.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/UserTests.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/UserTests.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/UserTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/x86_64-apple-macosx/debug/GitHubSearchTests.build/UserTests.swiftdeps"
+  }
+}

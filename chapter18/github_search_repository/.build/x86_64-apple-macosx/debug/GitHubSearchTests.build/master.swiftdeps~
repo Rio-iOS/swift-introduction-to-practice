@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "5595f32c40e746dbf4c2bffda528789b35a90ac2f2da97b70b807f8831a5c8eb"
+build_start_time: [1675246066, 217176914]
+build_end_time: [1675246078, 180349826]
+inputs:
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/ExampleJSON.swift": [1675245427, 139839887]
+  ? "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/RepositoryTests.swift"
+  : [1675246027, 997395038]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/UserTests.swift": [1675245703, 534529209]

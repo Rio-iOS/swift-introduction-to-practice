@@ -1,0 +1,1242 @@
+{
+  "kind": "Root",
+  "name": "TopLevel",
+  "printedName": "TopLevel",
+  "children": [
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "GitHubSearch"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "GitHubSearch"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Repository",
+      "printedName": "Repository",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "id",
+          "printedName": "id",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10RepositoryV2idSivp",
+          "mangledName": "$s12GitHubSearch10RepositoryV2idSivp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV2idSivg",
+              "mangledName": "$s12GitHubSearch10RepositoryV2idSivg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV2idSivs",
+              "mangledName": "$s12GitHubSearch10RepositoryV2idSivs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV2idSivM",
+              "mangledName": "$s12GitHubSearch10RepositoryV2idSivM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "name",
+          "printedName": "name",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10RepositoryV4nameSSvp",
+          "mangledName": "$s12GitHubSearch10RepositoryV4nameSSvp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV4nameSSvg",
+              "mangledName": "$s12GitHubSearch10RepositoryV4nameSSvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV4nameSSvs",
+              "mangledName": "$s12GitHubSearch10RepositoryV4nameSSvs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV4nameSSvM",
+              "mangledName": "$s12GitHubSearch10RepositoryV4nameSSvM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "fullName",
+          "printedName": "fullName",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10RepositoryV8fullNameSSvp",
+          "mangledName": "$s12GitHubSearch10RepositoryV8fullNameSSvp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV8fullNameSSvg",
+              "mangledName": "$s12GitHubSearch10RepositoryV8fullNameSSvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV8fullNameSSvs",
+              "mangledName": "$s12GitHubSearch10RepositoryV8fullNameSSvs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV8fullNameSSvM",
+              "mangledName": "$s12GitHubSearch10RepositoryV8fullNameSSvM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "owner",
+          "printedName": "owner",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "User",
+              "printedName": "GitHubSearch.User",
+              "usr": "s:12GitHubSearch4UserV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10RepositoryV5ownerAA4UserVvp",
+          "mangledName": "$s12GitHubSearch10RepositoryV5ownerAA4UserVvp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 3,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "User",
+                  "printedName": "GitHubSearch.User",
+                  "usr": "s:12GitHubSearch4UserV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV5ownerAA4UserVvg",
+              "mangledName": "$s12GitHubSearch10RepositoryV5ownerAA4UserVvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "User",
+                  "printedName": "GitHubSearch.User",
+                  "usr": "s:12GitHubSearch4UserV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV5ownerAA4UserVvs",
+              "mangledName": "$s12GitHubSearch10RepositoryV5ownerAA4UserVvs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10RepositoryV5ownerAA4UserVvM",
+              "mangledName": "$s12GitHubSearch10RepositoryV5ownerAA4UserVvM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Repository",
+              "printedName": "GitHubSearch.Repository",
+              "usr": "s:12GitHubSearch10RepositoryV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch10RepositoryV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s12GitHubSearch10RepositoryV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(id:name:fullName:owner:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Repository",
+              "printedName": "GitHubSearch.Repository",
+              "usr": "s:12GitHubSearch10RepositoryV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "User",
+              "printedName": "GitHubSearch.User",
+              "usr": "s:12GitHubSearch4UserV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch10RepositoryV2id4name8fullName5ownerACSi_S2SAA4UserVtcfc",
+          "mangledName": "$s12GitHubSearch10RepositoryV2id4name8fullName5ownerACSi_S2SAA4UserVtcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:12GitHubSearch10RepositoryV",
+      "mangledName": "$s12GitHubSearch10RepositoryV",
+      "moduleName": "GitHubSearch",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "CodingKeys",
+      "printedName": "CodingKeys",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "id",
+          "printedName": "id",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(GitHubSearch.CodingKeys.Type) -> GitHubSearch.CodingKeys",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "GitHubSearch.CodingKeys.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "CodingKeys",
+                      "printedName": "GitHubSearch.CodingKeys",
+                      "usr": "s:12GitHubSearch10CodingKeysO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:12GitHubSearch10CodingKeysO2idyA2CmF",
+          "mangledName": "$s12GitHubSearch10CodingKeysO2idyA2CmF",
+          "moduleName": "GitHubSearch",
+          "fixedbinaryorder": 0
+        },
+        {
+          "kind": "Var",
+          "name": "name",
+          "printedName": "name",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(GitHubSearch.CodingKeys.Type) -> GitHubSearch.CodingKeys",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "GitHubSearch.CodingKeys.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "CodingKeys",
+                      "printedName": "GitHubSearch.CodingKeys",
+                      "usr": "s:12GitHubSearch10CodingKeysO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:12GitHubSearch10CodingKeysO4nameyA2CmF",
+          "mangledName": "$s12GitHubSearch10CodingKeysO4nameyA2CmF",
+          "moduleName": "GitHubSearch",
+          "fixedbinaryorder": 1
+        },
+        {
+          "kind": "Var",
+          "name": "fullName",
+          "printedName": "fullName",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(GitHubSearch.CodingKeys.Type) -> GitHubSearch.CodingKeys",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "GitHubSearch.CodingKeys.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "CodingKeys",
+                      "printedName": "GitHubSearch.CodingKeys",
+                      "usr": "s:12GitHubSearch10CodingKeysO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:12GitHubSearch10CodingKeysO8fullNameyA2CmF",
+          "mangledName": "$s12GitHubSearch10CodingKeysO8fullNameyA2CmF",
+          "moduleName": "GitHubSearch",
+          "fixedbinaryorder": 2
+        },
+        {
+          "kind": "Var",
+          "name": "owner",
+          "printedName": "owner",
+          "children": [
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(GitHubSearch.CodingKeys.Type) -> GitHubSearch.CodingKeys",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Metatype",
+                  "printedName": "GitHubSearch.CodingKeys.Type",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "CodingKeys",
+                      "printedName": "GitHubSearch.CodingKeys",
+                      "usr": "s:12GitHubSearch10CodingKeysO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "declKind": "EnumElement",
+          "usr": "s:12GitHubSearch10CodingKeysO5owneryA2CmF",
+          "mangledName": "$s12GitHubSearch10CodingKeysO5owneryA2CmF",
+          "moduleName": "GitHubSearch",
+          "fixedbinaryorder": 3
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(rawValue:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "GitHubSearch.CodingKeys?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch10CodingKeysO8rawValueACSgSS_tcfc",
+          "mangledName": "$s12GitHubSearch10CodingKeysO8rawValueACSgSS_tcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "declAttributes": [
+            "Inlinable"
+          ],
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(stringValue:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "GitHubSearch.CodingKeys?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch10CodingKeysO11stringValueACSgSS_tcfc",
+          "mangledName": "$s12GitHubSearch10CodingKeysO11stringValueACSgSS_tcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(intValue:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "GitHubSearch.CodingKeys?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CodingKeys",
+                  "printedName": "GitHubSearch.CodingKeys",
+                  "usr": "s:12GitHubSearch10CodingKeysO"
+                }
+              ],
+              "usr": "s:Sq"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch10CodingKeysO8intValueACSgSi_tcfc",
+          "mangledName": "$s12GitHubSearch10CodingKeysO8intValueACSgSi_tcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Var",
+          "name": "intValue",
+          "printedName": "intValue",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Swift.Int?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10CodingKeysO8intValueSiSgvp",
+          "mangledName": "$s12GitHubSearch10CodingKeysO8intValueSiSgvp",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Swift.Int?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Int",
+                      "printedName": "Swift.Int",
+                      "usr": "s:Si"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10CodingKeysO8intValueSiSgvg",
+              "mangledName": "$s12GitHubSearch10CodingKeysO8intValueSiSgvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "rawValue",
+          "printedName": "rawValue",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10CodingKeysO8rawValueSSvp",
+          "mangledName": "$s12GitHubSearch10CodingKeysO8rawValueSSvp",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10CodingKeysO8rawValueSSvg",
+              "mangledName": "$s12GitHubSearch10CodingKeysO8rawValueSSvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Inlinable"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "stringValue",
+          "printedName": "stringValue",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch10CodingKeysO11stringValueSSvp",
+          "mangledName": "$s12GitHubSearch10CodingKeysO11stringValueSSvp",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch10CodingKeysO11stringValueSSvg",
+              "mangledName": "$s12GitHubSearch10CodingKeysO11stringValueSSvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "accessorKind": "get"
+            }
+          ]
+        }
+      ],
+      "declKind": "Enum",
+      "usr": "s:12GitHubSearch10CodingKeysO",
+      "mangledName": "$s12GitHubSearch10CodingKeysO",
+      "moduleName": "GitHubSearch",
+      "enumRawTypeName": "String",
+      "isEnumExhaustive": true,
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "RawRepresentable",
+          "printedName": "RawRepresentable",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "RawValue",
+              "printedName": "RawValue",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ]
+            }
+          ],
+          "usr": "s:SY",
+          "mangledName": "$sSY"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomDebugStringConvertible",
+          "printedName": "CustomDebugStringConvertible",
+          "usr": "s:s28CustomDebugStringConvertibleP",
+          "mangledName": "$ss28CustomDebugStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CodingKey",
+          "printedName": "CodingKey",
+          "usr": "s:s9CodingKeyP",
+          "mangledName": "$ss9CodingKeyP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomStringConvertible",
+          "printedName": "CustomStringConvertible",
+          "usr": "s:s23CustomStringConvertibleP",
+          "mangledName": "$ss23CustomStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Sendable",
+          "printedName": "Sendable",
+          "usr": "s:s8SendableP",
+          "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "GitHubSearch"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "GitHubSearch"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "GitHubSearch"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "User",
+      "printedName": "User",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "id",
+          "printedName": "id",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch4UserV2idSivp",
+          "mangledName": "$s12GitHubSearch4UserV2idSivp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV2idSivg",
+              "mangledName": "$s12GitHubSearch4UserV2idSivg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV2idSivs",
+              "mangledName": "$s12GitHubSearch4UserV2idSivs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV2idSivM",
+              "mangledName": "$s12GitHubSearch4UserV2idSivM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "login",
+          "printedName": "login",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12GitHubSearch4UserV5loginSSvp",
+          "mangledName": "$s12GitHubSearch4UserV5loginSSvp",
+          "moduleName": "GitHubSearch",
+          "declAttributes": [
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV5loginSSvg",
+              "mangledName": "$s12GitHubSearch4UserV5loginSSvg",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "String",
+                  "printedName": "Swift.String",
+                  "usr": "s:SS"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV5loginSSvs",
+              "mangledName": "$s12GitHubSearch4UserV5loginSSvs",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12GitHubSearch4UserV5loginSSvM",
+              "mangledName": "$s12GitHubSearch4UserV5loginSSvM",
+              "moduleName": "GitHubSearch",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(from:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "User",
+              "printedName": "GitHubSearch.User",
+              "usr": "s:12GitHubSearch4UserV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Decoder",
+              "printedName": "Swift.Decoder",
+              "usr": "s:s7DecoderP"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch4UserV4fromACs7Decoder_p_tKcfc",
+          "mangledName": "$s12GitHubSearch4UserV4fromACs7Decoder_p_tKcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "throwing": true,
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(id:login:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "User",
+              "printedName": "GitHubSearch.User",
+              "usr": "s:12GitHubSearch4UserV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12GitHubSearch4UserV2id5loginACSi_SStcfc",
+          "mangledName": "$s12GitHubSearch4UserV2id5loginACSi_SStcfc",
+          "moduleName": "GitHubSearch",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:12GitHubSearch4UserV",
+      "mangledName": "$s12GitHubSearch4UserV",
+      "moduleName": "GitHubSearch",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Decodable",
+          "printedName": "Decodable",
+          "usr": "s:Se",
+          "mangledName": "$sSe"
+        }
+      ]
+    }
+  ],
+  "json_format_version": 6
+}
