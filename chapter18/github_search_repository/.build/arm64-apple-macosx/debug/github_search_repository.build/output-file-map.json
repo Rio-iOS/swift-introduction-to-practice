@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/master.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/github_search_repository/main.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main.swiftdeps"
+  }
+}

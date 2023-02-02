@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "8e57697a18589a165e4c32a9a6010f2767e7914b0bdb858b977a5fa0cd1d5c9b"
+build_start_time: [1675310163, 484130859]
+build_end_time: [1675310163, 575011014]
+inputs:
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/github_search_repository/main.swift": [1675310131, 124169111]

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  GitHubAPIError.swift
 //  
 //
 //  Created by 藤門莉生 on 2023/02/01.

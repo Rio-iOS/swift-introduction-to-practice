@@ -1,0 +1,16 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "8e94588801bcb612c97978c21e12596a0f71ef9522d24559420a6794fd85dc18"
+build_start_time: [1675310265, 949428081]
+build_end_time: [1675310266, 51138877]
+inputs:
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/CodingKeys.swift": [1675258938, 140971422]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPI.swift": [1675309920, 599722862]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPIError.swift": [1675258938, 141025543]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClient.swift": [1675309844, 325781822]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClientError.swift": [1675258938, 141077518]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubRequest.swift": [1675310262, 814318656]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPClient.swift": [1675308642, 982180595]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPMethod.swift": [1675266572, 546975135]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/Repository.swift": [1675258938, 141165494]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/SearchResponse.swift": [1675258938, 141218423]
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/User.swift": [1675258938, 141266345]

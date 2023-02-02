@@ -1,0 +1,373 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repositoryPackageTests.xctest/Contents/MacOS/github_search_repositoryPackageTests",
+      "productName" : "github_search_repositoryPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.github_search_repository-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "importPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/github_search_repository/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.swiftmodule"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "github_search_repository",
+      "moduleOutputPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.swiftmodule",
+      "objects" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "github_search_repository_main",
+        "-color-diagnostics",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/github_search_repository/main.swift"
+      ],
+      "tempsPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/github_search_repository.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.GitHubSearch-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "importPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/CodingKeys.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPI.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPIError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClientError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubRequest.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPMethod.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/Repository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/SearchResponse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/User.swift"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "GitHubSearch",
+      "moduleOutputPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.swiftmodule",
+      "objects" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubSearch-Swift.h",
+        "-color-diagnostics",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/CodingKeys.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPI.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPIError.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClient.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClientError.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubRequest.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPClient.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPMethod.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/Repository.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/SearchResponse.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/User.swift"
+      ],
+      "tempsPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.GitHubSearchTests-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "importPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/ExampleJSON.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/GitHubAPIErrorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/GitHubClientTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/RepositoryTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/SearchResponseTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/StubHTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/UserTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.swiftmodule"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "GitHubSearchTests",
+      "moduleOutputPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.swiftmodule",
+      "objects" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/GitHubAPIErrorTests.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/GitHubClientTests.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/SearchResponseTests.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/StubHTTPClient.swift.o",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/UserTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/ExampleJSON.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/GitHubAPIErrorTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/GitHubClientTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/RepositoryTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/SearchResponseTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/StubHTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build/UserTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/ExampleJSON.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/GitHubAPIErrorTests.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/GitHubClientTests.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/RepositoryTests.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/SearchResponseTests.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/StubHTTPClient.swift",
+        "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Tests/GitHubSearchTests/UserTests.swift"
+      ],
+      "tempsPath" : "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearchTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

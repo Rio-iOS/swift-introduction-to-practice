@@ -1,0 +1,71 @@
+{
+  "": {
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/master.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/CodingKeys.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/CodingKeys.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPI.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPI.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubAPIError.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubAPIError.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClient.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClient.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubClientError.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubClientError.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/GitHubRequest.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/GitHubRequest.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPClient.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPClient.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/HTTPMethod.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/HTTPMethod.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/Repository.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/Repository.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/SearchResponse.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/SearchResponse.swiftdeps"
+  },
+  "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/Sources/GitHubSearch/User.swift": {
+    "dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User.d",
+    "object": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User.swift.o",
+    "swiftmodule": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User~partial.swiftmodule",
+    "swift-dependencies": "/Users/riofujimon/swift-introduction-to-practice/chapter18/github_search_repository/.build/arm64-apple-macosx/debug/GitHubSearch.build/User.swiftdeps"
+  }
+}
